@@ -1,0 +1,34 @@
+﻿<%@ Master Language="C#" CodeFile="Site.master.cs" Inherits="Site" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <title>Dynamic Data Site</title>
+    <link href="~/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <h1 class="DDMainHeader">Dynamic Data Site</h1>
+    <div class="DDNavigation">
+        <a runat="server" href="~/">
+            <img alt="Back to home page" runat="server" src="DynamicData/Content/Images/back.gif" />Back to home page</a>
+    </div>
+
+    <form id="form1" runat="server">
+        <div>
+            <asp:ScriptManager runat="server" EnablePartialRendering="false">
+                <Scripts>
+                    <asp:ScriptReference Name="jquery" />
+                    <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" />
+                </Scripts>
+            </asp:ScriptManager>
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
